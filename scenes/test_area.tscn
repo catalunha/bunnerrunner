@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/coil.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/coin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/platform_big.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/wingman.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/fly_powerup.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/parallax.gd" type="Script" id=8]
+[ext_resource path="res://scenes/parallax.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/carrot.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/spikes.tscn" type="PackedScene" id=12]
+
+[node name="test_area" type="Node2D"]
+
+[node name="platforms" type="Node" parent="."]
+
+[node name="platform_big" parent="platforms" instance=ExtResource( 4 )]
+position = Vector2( 441.517, 669.96 )
+texture = 0
+
+[node name="platform_big2" parent="platforms" instance=ExtResource( 4 )]
+position = Vector2( 1096.78, 766.266 )
+
+[node name="platform_big3" parent="platforms" instance=ExtResource( 4 )]
+position = Vector2( 1734.56, 685.4 )
+
+[node name="platform_big4" parent="platforms" instance=ExtResource( 4 )]
+position = Vector2( 2238.65, 761.554 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 152.871, 203.761 )
+
+[node name="coil" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1595.27, 580.534 )
+rotation = 0.261799
+
+[node name="carrot" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2469, 624.316 )
+
+[node name="parallax" parent="." instance=ExtResource( 9 )]
+script = ExtResource( 8 )
+modulate_layer1 = Color( 0.0666667, 0.913725, 0.913725, 1 )
+modulate_layer2 = Color( 0.152941, 0.701961, 0.941176, 1 )
+modulate_layer3 = Color( 0.117647, 0.807843, 0.45098, 1 )
+modulate_layer4 = Color( 0.262745, 0.415686, 0.0431373, 1 )
+
+[node name="coins" type="Node" parent="."]
+
+[node name="coin" parent="coins" instance=ExtResource( 3 )]
+position = Vector2( 1028.18, 468.369 )
+
+[node name="coin2" parent="coins" instance=ExtResource( 3 )]
+position = Vector2( 1930, 139.908 )
+
+[node name="coin4" parent="coins" instance=ExtResource( 3 )]
+position = Vector2( 2255.06, 466.966 )
+
+[node name="coin3" parent="coins" instance=ExtResource( 3 )]
+position = Vector2( 1612.9, 399.448 )
+
+[node name="fly_powerups" type="Node" parent="."]
+
+[node name="fly_powerup" parent="fly_powerups" instance=ExtResource( 6 )]
+position = Vector2( 803.381, 639.732 )
+time = 10.0
+
+[node name="wingmans" type="Node" parent="."]
+
+[node name="wingman2" parent="wingmans" instance=ExtResource( 5 )]
+position = Vector2( 1417, 727.1 )
+
+[node name="spikes" parent="." instance=ExtResource( 12 )]

@@ -1,0 +1,114 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/stage_button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://fonts/Chocolate Bar Demo.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://scripts/game.gd" type="Script" id=3]
+[ext_resource path="res://scenes/power_up_bar.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/coin_counter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sprites/cross.png" type="Texture" id=6]
+[ext_resource path="res://music/Victory.ogg" type="AudioStream" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 300
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "count"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "3", "2", "1" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[node name="game" type="Node" groups=[
+"game",
+]]
+script = ExtResource( 3 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="controls" type="Node2D" parent="HUD"]
+visible = false
+
+[node name="power_up_bar" parent="HUD/controls" instance=ExtResource( 4 )]
+position = Vector2( 30.7251, 25.7609 )
+
+[node name="coin_counter" parent="HUD/controls" instance=ExtResource( 5 )]
+position = Vector2( 293.878, 41.8718 )
+
+[node name="count_down" type="Node2D" parent="HUD"]
+visible = false
+position = Vector2( 960, 540 )
+
+[node name="label" type="Label" parent="HUD/count_down"]
+margin_left = -69.2965
+margin_top = -155.564
+margin_right = 68.7035
+margin_bottom = 166.436
+custom_fonts/font = SubResource( 1 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="anim" type="AnimationPlayer" parent="HUD/count_down"]
+anims/count = SubResource( 2 )
+
+[node name="stage_exit" type="TextureButton" parent="HUD"]
+margin_left = 1753.98
+margin_top = 5.33942
+margin_right = 1914.98
+margin_bottom = 158.339
+texture_normal = ExtResource( 6 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="interface" type="Node2D" parent="."]
+
+[node name="stage_buttons" type="GridContainer" parent="interface"]
+margin_left = 512.965
+margin_top = 196.431
+margin_right = 692.965
+margin_bottom = 256.431
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stage_button" parent="interface/stage_buttons" instance=ExtResource( 1 )]
+stage = "res://scenes/test_area.tscn"
+music = "res://music/happy.ogg"
+
+[node name="stage_button2" parent="interface/stage_buttons" instance=ExtResource( 1 )]
+margin_top = 64.0
+margin_bottom = 124.0
+text = "Stage 02"
+stage = "res://scenes/test_area.tscn"
+
+[node name="stream_victory" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+[connection signal="pressed" from="HUD/stage_exit" to="." method="_on_stage_exit_pressed"]
