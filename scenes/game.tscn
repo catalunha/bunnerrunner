@@ -98,14 +98,10 @@ __meta__ = {
 }
 
 [node name="stage_button" parent="interface/stage_buttons" instance=ExtResource( 1 )]
+text = "Stage 1"
 stage = "res://scenes/test_area.tscn"
 music = "res://music/happy.ogg"
-
-[node name="stage_button2" parent="interface/stage_buttons" instance=ExtResource( 1 )]
-margin_top = 64.0
-margin_bottom = 124.0
-text = "Stage 02"
-stage = "res://scenes/test_area.tscn"
+stage_name = "stage1"
 
 [node name="stream_victory" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )

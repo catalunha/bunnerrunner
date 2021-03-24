@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/golden_carrot.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/golden_carrots.gd" type="Script" id=2]
+
+[node name="golden_carrots" type="Node2D"]
+position = Vector2( 1646.42, 783.17 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+
+[node name="golden_carrot" parent="." instance=ExtResource( 1 )]
+position = Vector2( 45.2549, 11.3137 )
+scale = Vector2( 2, 2 )
+
+[node name="golden_carrot2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -79.5818, -4.24261 )
+scale = Vector2( 2, 2 )
+
+[node name="golden_carrot3" parent="." instance=ExtResource( 1 )]
+position = Vector2( -215.308, -22.4717 )
+scale = Vector2( 2, 2 )

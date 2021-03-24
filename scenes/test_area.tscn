@@ -33,7 +33,6 @@ position = Vector2( 152.871, 203.761 )
 
 [node name="coil" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1595.27, 580.534 )
-rotation = 0.261799
 
 [node name="carrot" parent="." instance=ExtResource( 10 )]
 position = Vector2( 2469, 624.316 )
@@ -48,13 +47,19 @@ modulate_layer4 = Color( 0.262745, 0.415686, 0.0431373, 1 )
 [node name="coins" type="Node" parent="."]
 
 [node name="coin" parent="coins" instance=ExtResource( 3 )]
-position = Vector2( 1028.18, 468.369 )
+position = Vector2( 559.49, 531.365 )
 
 [node name="coin2" parent="coins" instance=ExtResource( 3 )]
-position = Vector2( 1930, 139.908 )
+position = Vector2( 1063.17, 628.757 )
+
+[node name="coin5" parent="coins" instance=ExtResource( 3 )]
+position = Vector2( 1225.09, 498.591 )
 
 [node name="coin4" parent="coins" instance=ExtResource( 3 )]
-position = Vector2( 2255.06, 466.966 )
+position = Vector2( 2207.18, 517.363 )
+
+[node name="coin6" parent="coins" instance=ExtResource( 3 )]
+position = Vector2( 1975.42, 501.489 )
 
 [node name="coin3" parent="coins" instance=ExtResource( 3 )]
 position = Vector2( 1612.9, 399.448 )
@@ -63,7 +68,6 @@ position = Vector2( 1612.9, 399.448 )
 
 [node name="fly_powerup" parent="fly_powerups" instance=ExtResource( 6 )]
 position = Vector2( 803.381, 639.732 )
-time = 10.0
 
 [node name="wingmans" type="Node" parent="."]
 
