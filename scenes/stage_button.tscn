@@ -14,4 +14,7 @@ rect_min_size = Vector2( 180, 60 )
 custom_fonts/font = SubResource( 1 )
 text = "Stage 01"
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="." to="." method="_on_stage_button_pressed"]

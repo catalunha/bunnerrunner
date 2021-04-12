@@ -16,7 +16,7 @@
 [node name="platforms" type="Node" parent="."]
 
 [node name="platform_big" parent="platforms" instance=ExtResource( 4 )]
-position = Vector2( 441.517, 669.96 )
+position = Vector2( 236.758, 698.244 )
 texture = 0
 
 [node name="platform_big2" parent="platforms" instance=ExtResource( 4 )]
@@ -67,7 +67,7 @@ position = Vector2( 1612.9, 399.448 )
 [node name="fly_powerups" type="Node" parent="."]
 
 [node name="fly_powerup" parent="fly_powerups" instance=ExtResource( 6 )]
-position = Vector2( 803.381, 639.732 )
+position = Vector2( 684.721, 665.159 )
 
 [node name="wingmans" type="Node" parent="."]
 
@@ -75,3 +75,4 @@ position = Vector2( 803.381, 639.732 )
 position = Vector2( 1417, 727.1 )
 
 [node name="spikes" parent="." instance=ExtResource( 12 )]
+visible = false

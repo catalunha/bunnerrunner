@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/stage_button.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fonts/Chocolate Bar Demo.otf" type="DynamicFontData" id=2]
@@ -39,6 +39,10 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 2 )
 
 [node name="game" type="Node" groups=[
 "game",
@@ -82,6 +86,17 @@ margin_bottom = 158.339
 texture_normal = ExtResource( 6 )
 expand = true
 stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HUD"]
+margin_left = 1432.59
+margin_top = 68.805
+margin_right = 1702.59
+margin_bottom = 101.805
+custom_fonts/font = SubResource( 3 )
+text = "Made by Catalunha"
 __meta__ = {
 "_edit_use_anchors_": false
 }
